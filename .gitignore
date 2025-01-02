@@ -5,6 +5,7 @@ instance/
 
 venv/
 .env/
+migrations/
 
 .ipynb_checkpoints/
 
