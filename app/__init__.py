@@ -2,6 +2,7 @@ from flask import Flask
 from .models.base import db
 from config import Config
 from flask_migrate import Migrate
+from .api.auth_api import auth_bp
 
 
 def create_app():
@@ -11,6 +12,8 @@ def create_app():
     db.init_app(app)
 
     from .models import base, user, book, bookcategory, category, loan, author
+
+    app.register_blueprint(auth_bp, url_prefix="/auth")
 
     Migrate(app, db)
 
