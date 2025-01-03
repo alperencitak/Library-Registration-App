@@ -40,6 +40,6 @@ class AuthService:
         user = User.query.filter_by(email=validated_data['email']).first()
 
         if user and argon2.verify(validated_data['password'], user.password):
-            return {"message": "Login successful", "user_id": user.id, "email": user.email}
+            return {"user_id": user.id, "email": user.email}
         else:
             return ValueError("Invalid email or password")
