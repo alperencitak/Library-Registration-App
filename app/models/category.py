@@ -6,4 +6,4 @@ class Category(BaseModel):
 
     name = db.Column(db.String(100), nullable=False)
 
-    book_categories = db.relationship("BookCategory", back_populates="category")
+    books = db.relationship("Book", secondary="book_categories", back_populates="categories")

@@ -9,4 +9,4 @@ class Book(BaseModel):
     author_id = db.Column(db.Integer, db.ForeignKey('authors.id'), nullable=False)
 
     author = db.relationship("Author", back_populates="books")
-    book_categories = db.relationship("BookCategory", back_populates="book")
+    categories = db.relationship("Category", secondary="book_categories", back_populates="books")
