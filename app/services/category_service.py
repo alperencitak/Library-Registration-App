@@ -37,6 +37,12 @@ class CategoryService:
         return schema.dump(category_list)
 
     @staticmethod
+    def get_by_id(category_id):
+        category = Category.query.filter_by(id=category_id).first()
+        schema = CategorySchema()
+        return schema.dump(category)
+
+    @staticmethod
     def get_all_by_character(query):
         schema = CategorySchema(many=True)
 
