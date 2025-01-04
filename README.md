@@ -1,4 +1,4 @@
-This GitHub project is a Library Registration App. It allows users to register for the library and borrow books. It is focused on the backend only.
+This GitHub project is a Library Registration App. It allows users to register for the library and borrow books. It is focused on the backend only. The project design is set to Clean Architecture.
 
 ## **Key Features:**
 - User registration for the library
