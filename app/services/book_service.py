@@ -1,7 +1,7 @@
 from ..schemas.book_schema import BookSchema
-from ..models.base import db
-from ..models.book import Book
 from ..models.category import Category
+from ..models.book import Book
+from ..models.base import db
 
 
 class BookService:
@@ -52,7 +52,7 @@ class BookService:
     @staticmethod
     def delete_by_id(book_id):
 
-        book = Book.query.filter_by(id=book_id)
+        book = Book.query.filter_by(id=book_id).first()
 
         if book:
             db.session.delete(book)
