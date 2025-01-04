@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 from .api.auth_api import auth_bp
 from .api.category_api import category_bp
 from .api.book_api import book_bp
+from .api.author_api import author_bp
 
 
 def create_app():
@@ -18,6 +19,7 @@ def create_app():
     app.register_blueprint(auth_bp, url_prefix="/auth")
     app.register_blueprint(category_bp, url_prefix="/category")
     app.register_blueprint(book_bp, url_prefix="/book")
+    app.register_blueprint(author_bp, url_prefix="/author")
 
     Migrate(app, db)
 
